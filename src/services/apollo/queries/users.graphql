@@ -1,0 +1,22 @@
+query AllUsers {
+  users {
+    id
+    email
+    createdAt
+    followers {
+      email
+    }
+    following {
+      email
+    }
+    articles {
+      id
+      title
+      createdAt
+      updatedAt
+      author {
+        id
+      }
+    }
+  }
+}
