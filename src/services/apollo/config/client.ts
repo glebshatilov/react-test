@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
+import apolloLink from './link/index.js'
 
 const apolloClient = new ApolloClient({
-  uri: import.meta.env.VITE_GRAPHQL_URI,
+  link: apolloLink,
   cache: new InMemoryCache(),
 })
 
