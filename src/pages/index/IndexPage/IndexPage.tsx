@@ -7,14 +7,14 @@ import { TestSubscription } from '../../../services/apollo/subscriptions/test.gr
 
 function IndexPage() {
   // const { loading, error, data, ...rest } = useQuery(AllUsers)
-  const { data, loading, error, ...rest} = useSubscription(TestSubscription)
+  const { data, loading, error, ...rest } = useSubscription(TestSubscription)
 
   return (
     <div className="IndexPage">
       <h1>Index {data?.numberIncremented || 'test'}</h1>
-      <Link to={'/profile'}>Profile</Link>
-      <Link to={'/signin'}>SignIn</Link>
-      <Link to={'/profile'}>SignUp</Link>
+      <Link to="/profile">Profile</Link>
+      <Link to="/signin">SignIn</Link>
+      <Link to="/profile">SignUp</Link>
     </div>
   )
 }

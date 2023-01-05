@@ -16,7 +16,7 @@ function SignInForm() {
 
   if (data && !error) {
     console.log('gagagagagga', Math.random())
-    return <Navigate replace to={'/'} />
+    return <Navigate replace to="/" />
   }
 
   console.log('data', data)
@@ -29,22 +29,33 @@ function SignInForm() {
 
   return (
     <div className="sign-in-form">
-      <Paper variant={'outlined'} sx={{p: 3, width: '400px'}}>
+      <Paper variant="outlined" sx={{ p: 3, width: '400px' }}>
         <Stack spacing={2}>
           <h3>Test {ble}</h3>
           <TextField
             error={!!error}
-            variant={'standard'}
-            label={'Email'} value={email} onChange={event => setEmail(event.target.value)} />
+            variant="standard"
+            label="Email"
+            value={email}
+            onChange={event => setEmail(event.target.value)}
+          />
           <TextField
             error={!!error}
             helperText={error?.message}
-            variant={'standard'} label={'Password'} type={'password'} autoComplete={'currentPassword'} value={password} onChange={event => setPassword(event.target.value)} />
+            variant="standard"
+            label="Password"
+            type="password"
+            autoComplete="currentPassword"
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
           <Button
             disabled={!(email && password)}
             variant="contained"
-            onClick={() => signIn({variables: { email, password }})}
-          >Sign in</Button>
+            onClick={() => signIn({ variables: { email, password } })}
+          >
+            Sign in
+          </Button>
         </Stack>
       </Paper>
     </div>

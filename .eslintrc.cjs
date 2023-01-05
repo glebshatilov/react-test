@@ -18,6 +18,8 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    'react/jsx-max-props-per-line': [2, { "maximum": { "single": 3, "multi": 1 } }]
+    'react/jsx-max-props-per-line': [2, { "maximum": { "single": 3, "multi": 1 } }],
+    'space-before-function-paren': ['error', 'never'],
+    'jsx-quotes': ["error", "prefer-double"]
   }
 }

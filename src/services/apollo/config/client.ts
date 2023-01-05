@@ -3,7 +3,7 @@ import apolloLink from './link/index.js'
 
 const apolloClient = new ApolloClient({
   link: apolloLink,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 })
 
 export default apolloClient
