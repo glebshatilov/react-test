@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useQuery, useSubscription } from '@apollo/client'
 // @ts-ignore
 // import { AllUsers } from '../../../services/apollo/queries/users.graphql'
@@ -11,6 +12,9 @@ function IndexPage() {
   return (
     <div className="IndexPage">
       <h1>Index {data?.numberIncremented || 'test'}</h1>
+      <Link to={'/profile'}>Profile</Link>
+      <Link to={'/signin'}>SignIn</Link>
+      <Link to={'/profile'}>SignUp</Link>
     </div>
   )
 }
