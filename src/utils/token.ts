@@ -1,11 +1,15 @@
+import {
+  TOKEN_LOCAL_STORAGE_NAME
+} from '@/utils/constants/stores.js'
+
 export function setToken(token: string): void {
-  localStorage.setItem('token', token)
+  localStorage.setItem(TOKEN_LOCAL_STORAGE_NAME, token)
 }
 
 export function getToken(): string | null {
-  return localStorage.getItem('token')
+  return localStorage.getItem(TOKEN_LOCAL_STORAGE_NAME)
 }
 
 export function clearToken(): void {
-  localStorage.removeItem('token')
+  localStorage.removeItem(TOKEN_LOCAL_STORAGE_NAME)
 }
