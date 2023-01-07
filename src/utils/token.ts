@@ -1,6 +1,6 @@
 import {
   TOKEN_LOCAL_STORAGE_NAME
-} from '@/utils/constants/stores.js'
+} from '@/utils/constants/storage.js'
 
 export function setToken(token: string): void {
   localStorage.setItem(TOKEN_LOCAL_STORAGE_NAME, token)
