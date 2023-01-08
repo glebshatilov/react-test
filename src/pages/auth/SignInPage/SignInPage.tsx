@@ -1,4 +1,4 @@
-import SignInForm from '@/pages/auth/SignInForm/SignInForm.js'
+import SignInForm from '@/components/SignInForm/SignInForm.js'
 import Container from '@mui/material/Container'
 
 function SignInPage() {

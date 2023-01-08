@@ -20,3 +20,10 @@ query AllUsers {
     }
   }
 }
+
+query SignedInUserInfo {
+  user {
+    createdAt
+    email
+  }
+}

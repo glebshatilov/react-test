@@ -1,9 +1,10 @@
-import { split } from '@apollo/client/core';
+import { split, ApolloLink, from } from '@apollo/client/core'
 import { getMainDefinition } from '@apollo/client/utilities'
+import { getToken } from '@/utils/token.js'
 import httpLink from './http.js'
 import sseLink from './sse.js'
 
-const apolloLink = split(
+const mainLink = split(
   ({ query }) => {
     const definition = getMainDefinition(query)
     return (
@@ -15,4 +16,21 @@ const apolloLink = split(
   httpLink
 )
 
-export default apolloLink
+const authHeaderLink = new ApolloLink((operation, forward) => {
+  operation.setContext(
+    ({ headers = {} }) => {
+      const token = getToken()
+
+      return {
+        headers: {
+          ...headers,
+          authorization: token ? `Bearer ${token}` : null
+        }
+      }
+    }
+  )
+
+  return forward(operation)
+})
+
+export default from([authHeaderLink, mainLink])
