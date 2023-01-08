@@ -1,5 +1,5 @@
-import HeaderUser from './HeaderUser/HeaderUser.js'
-import HeaderLogo from './HeaderLogo/HeaderLogo.js'
+import HeaderUser from '../HeaderUser/HeaderUser.js'
+import HeaderLogo from '../HeaderLogo/HeaderLogo.js'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import './Header.scss'

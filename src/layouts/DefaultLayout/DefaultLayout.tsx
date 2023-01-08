@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import Header from '@/components/layouts/Header/Header.js'
-import Footer from '@/components/layouts/Footer/Footer.js'
+import Header from '@/layouts/header/Header/Header.js'
+import Footer from '@/layouts/footer/Footer/Footer.js'
 import './DefaultLayout.scss'
 
 interface Props {
