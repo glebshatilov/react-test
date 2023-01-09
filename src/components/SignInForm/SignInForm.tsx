@@ -6,9 +6,11 @@ import Stack from '@mui/material/Stack'
 // @ts-ignore
 import { AuthSignIn } from '@/services/apollo/mutations/auth.graphql'
 import apolloClient from '@/services/apollo/config/client.js'
-import { setToken } from '@/utils/token.js'
+import AuthContext from '@/contexts/AuthContext.js'
 
-interface Props {}
+interface Props {
+  onSuccess?: () => void
+}
 
 interface State {
   email: string,
@@ -61,10 +63,9 @@ class SignInForm extends React.Component<Props, State> {
       const { token } = res?.data?.auth?.signIn
 
       if (token) {
-        setToken(token)
-        setTimeout(() => {
-          document.location.reload()
-        })
+        // @ts-ignore
+        this.context.signInWithToken(token)
+        this.props.onSuccess?.()
       }
     } catch (error) {
       // @ts-ignore
@@ -108,5 +109,7 @@ class SignInForm extends React.Component<Props, State> {
     )
   }
 }
+
+SignInForm.contextType = AuthContext
 
 export default SignInForm

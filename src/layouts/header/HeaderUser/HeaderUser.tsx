@@ -3,12 +3,11 @@ import HeaderUserNav from '../HeaderUserNav/HeaderUserNav.js'
 import HeaderUserInfo from '../HeaderUserInfo/HeaderUserInfo.js'
 import useAuth from '@/hooks/useAuth.js'
 import { useQuery } from '@apollo/client'
-import { clearToken } from '@/utils/token.js'
 // @ts-ignore
 import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'
 
 function HeaderUser() {
-  const { isSignedIn, setSignedIn } = useAuth()
+  const { isSignedIn, signOut } = useAuth()
   const { data, error, loading } = useQuery(SignedInUserInfo)
 
   if (!isSignedIn) return null
@@ -18,10 +17,7 @@ function HeaderUser() {
       const unauthorizedError = error.graphQLErrors.find(e => e.extensions.code === 'UNAUTHORIZED')
 
       if (unauthorizedError) {
-        setTimeout(() => {
-          clearToken()
-          setSignedIn(false)
-        })
+        signOut()
       }
     }
   }

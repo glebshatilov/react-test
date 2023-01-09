@@ -14,11 +14,17 @@ function HeaderSignInButton() {
     setOpen(false)
   }
 
+  function handleSuccessSignIn() {
+    setTimeout(() => {
+      document.location.reload()
+    })
+  }
+
   return (
     <>
       <Button onClick={() => handleClick()}>Sign in</Button>
       <Dialog open={isOpen} onClose={() => handleClose()}>
-        <SignInForm />
+        <SignInForm onSuccess={() => handleSuccessSignIn()} />
       </Dialog>
     </>
   )
