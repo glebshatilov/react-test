@@ -1,6 +1,6 @@
 import Stack from '@mui/material/Stack'
 import HeaderUserNav from '../HeaderUserNav/HeaderUserNav.js'
-import HeaderUserInfo from '../HeaderUserInfo/HeaderUserInfo.js'
+import HeaderUserProfile from '../HeaderUserProfile/HeaderUserProfile.js'
 import useAuth from '@/hooks/useAuth.js'
 import { useQuery } from '@apollo/client'
 // @ts-ignore
@@ -26,9 +26,9 @@ function HeaderUser() {
 
   return (
     <div className="header-user">
-      <Stack direction="row" spacing={4} alignItems="center">
+      <Stack direction="row" spacing={3} alignItems="center">
         <HeaderUserNav />
-        <HeaderUserInfo data={data.user} />
+        <HeaderUserProfile data={data.user} />
       </Stack>
     </div>
   )
