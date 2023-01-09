@@ -8,7 +8,7 @@ import './Header.scss'
 function Header() {
   return (
     <div className="header">
-      <Container>
+      <Container sx={{ marginY: 'auto' }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <div className="header__left">
             <Stack

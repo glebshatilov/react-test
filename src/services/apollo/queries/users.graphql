@@ -25,5 +25,6 @@ query SignedInUserInfo {
   user {
     createdAt
     email
+    name
   }
 }

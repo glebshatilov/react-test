@@ -1,8 +1,15 @@
+import DefaultLayout from '@/layouts/DefaultLayout/DefaultLayout.js'
+import Container from '@mui/material/Container'
+
 function MessagesPage() {
   return (
-    <div className="MessagesPage">
-      <h1>Messages</h1>
-    </div>
+    <DefaultLayout>
+      <div className="messages-page">
+        <Container>
+          <h1>Messages</h1>
+        </Container>
+      </div>
+    </DefaultLayout>
   )
 }
 

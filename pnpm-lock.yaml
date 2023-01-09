@@ -5,6 +5,7 @@ specifiers:
   '@babel/core': ^7.20.12
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
+  '@mui/icons-material': ^5.11.0
   '@mui/material': ^5.11.3
   '@rollup/plugin-graphql': ^2.0.2
   '@types/node': ^18.11.18
@@ -35,6 +36,7 @@ dependencies:
   '@apollo/client': 3.7.3_gdcq4dv6opitr3wbfwyjmanyra
   '@emotion/react': 11.10.5_jp5qgyg6plq757v5hojp7ls2oe
   '@emotion/styled': 11.10.5_jp5djshq6aqfasno3mth3hguci
+  '@mui/icons-material': 5.11.0_oiuuhmk4wjjpe4qb2sby7usney
   '@mui/material': 5.11.3_lskpmcsdi7ipu6qpuapyu56ihm
   graphql: 16.6.0
   graphql-sse: 2.0.0_graphql@16.6.0
@@ -752,6 +754,23 @@ packages:
 
   /@mui/core-downloads-tracker/5.11.3:
     resolution: {integrity: sha512-Bgb6//KtxY7IC7M5Pa5RKFX1wttc213mqpKqydnz3wn4BGDXfA5c0vf5nTu5zqsJeB4T3ysAJTRJhQ/E1GsZDQ==}
+    dev: false
+
+  /@mui/icons-material/5.11.0_oiuuhmk4wjjpe4qb2sby7usney:
+    resolution: {integrity: sha512-I2LaOKqO8a0xcLGtIozC9xoXjZAto5G5gh0FYUMAlbsIHNHIjn4Xrw9rvjY20vZonyiGrZNMAlAXYkY6JvhF6A==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@mui/material': 5.11.3_lskpmcsdi7ipu6qpuapyu56ihm
+      '@types/react': 18.0.26
+      react: 18.2.0
     dev: false
 
   /@mui/material/5.11.3_lskpmcsdi7ipu6qpuapyu56ihm:
