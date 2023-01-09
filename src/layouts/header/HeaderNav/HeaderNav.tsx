@@ -6,7 +6,7 @@ function HeaderNav() {
     <Stack direction="row" spacing={2}>
       <Link to="/">Home</Link>
       <Link to="/">Articles</Link>
-      <Link to="/">Users</Link>
+      <Link to="/users">Users</Link>
     </Stack>
   )
 }
