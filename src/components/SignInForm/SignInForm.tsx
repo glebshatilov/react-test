@@ -38,12 +38,14 @@ class SignInForm extends React.Component<Props, State> {
     await this.signIn()
   }
 
+  // @ts-ignore
   handleInputPassword(e) {
     this.setState({
       password: e.target.value
     })
   }
 
+  // @ts-ignore
   handleInputEmail(e) {
     this.setState({
       email: e.target.value
