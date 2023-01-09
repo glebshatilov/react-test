@@ -3,7 +3,7 @@ import SignInForm from '@/components/SignInForm/SignInForm.js'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 
-function HeaderAuthModal() {
+function HeaderSignInButton() {
   const [isOpen, setOpen] = useState(false)
 
   function handleClick() {
@@ -24,4 +24,4 @@ function HeaderAuthModal() {
   )
 }
 
-export default HeaderAuthModal
+export default HeaderSignInButton
