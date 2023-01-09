@@ -1,6 +1,11 @@
 import './DefaultContainer.scss'
+import { ReactNode } from 'react'
 
-function DefaultContainer({ children }) {
+interface Props {
+  children: ReactNode
+}
+
+function DefaultContainer({ children }:Props) {
   return (
     <div className="default-container">
       {children}
