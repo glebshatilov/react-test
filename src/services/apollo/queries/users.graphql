@@ -2,6 +2,8 @@ query AllUsers {
   users {
     id
     email
+    name
+    username
     createdAt
     followers {
       email
