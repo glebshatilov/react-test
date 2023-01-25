@@ -1,6 +1,5 @@
 import SignInForm from '@/components/SignInForm/SignInForm.js'
 import Container from '@mui/material/Container'
-import DefaultLayout from '@/layouts/DefaultLayout/DefaultLayout.js'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function SignInPage() {
@@ -15,14 +14,12 @@ function SignInPage() {
   }
 
   return (
-    <DefaultLayout>
-      <div className="sign-in-page">
-        <Container>
-          <h1>Sign in</h1>
-          <SignInForm onSuccess={() => handleSuccessSignIn()} />
-        </Container>
-      </div>
-    </DefaultLayout>
+    <div className="sign-in-page">
+      <Container>
+        <h1>Sign in</h1>
+        <SignInForm onSuccess={() => handleSuccessSignIn()} />
+      </Container>
+    </div>
   )
 }
 
