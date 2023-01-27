@@ -32,6 +32,10 @@ export function getRoutes() {
               element: <MessagesPage />
             },
             {
+              path: '/messages/dm/:userId',
+              element: <ChatPage />
+            },
+            {
               path: '/profile',
               element: <ProfileMainPage />
             }

@@ -25,6 +25,7 @@ query AllUsers {
 
 query SignedInUserInfo {
   user {
+    id
     createdAt
     email
     name

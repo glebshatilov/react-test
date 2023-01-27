@@ -1,0 +1,26 @@
+query DirectMessagesChat($userId: ID!) {
+  messages {
+    chat(userId: $userId) {
+      id
+      participants {
+        id
+        email
+      }
+      messages {
+        data {
+          text
+          id
+          createdAt
+          author {
+            id
+          }
+        }
+      }
+      interlocutor {
+        email
+        name
+        id
+      }
+    }
+  }
+}
