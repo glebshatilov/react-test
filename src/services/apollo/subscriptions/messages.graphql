@@ -1,0 +1,17 @@
+subscription TestSubscription {
+  newMessageInChat {
+    id
+    lastMessage {
+      id
+      text
+      createdAt
+    }
+    ... on DirectMessagesChat {
+      interlocutor {
+        id
+        name
+        email
+      }
+    }
+  }
+}

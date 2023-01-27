@@ -16,6 +16,7 @@ const mainLink = split(
   httpLink
 )
 
+// ToDo: why doesn't work for subscriptions?
 const authHeaderLink = new ApolloLink((operation, forward) => {
   operation.setContext(
     ({ headers = {} }) => {

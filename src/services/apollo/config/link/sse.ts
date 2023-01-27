@@ -2,10 +2,11 @@ import {
   ApolloLink,
   Operation,
   FetchResult,
-  Observable,
+  Observable
 } from '@apollo/client/core'
 import { print } from 'graphql'
 import { createClient, ClientOptions, Client } from 'graphql-sse'
+import { getToken } from '@/utils/token.js'
 
 class SSELink extends ApolloLink {
   private client: Client
@@ -22,8 +23,8 @@ class SSELink extends ApolloLink {
         {
           next: sink.next.bind(sink),
           complete: sink.complete.bind(sink),
-          error: sink.error.bind(sink),
-        },
+          error: sink.error.bind(sink)
+        }
       )
     })
   }
@@ -31,11 +32,14 @@ class SSELink extends ApolloLink {
 
 const sseLink = new SSELink({
   url: import.meta.env.VITE_GRAPHQL_SSE_URI,
+  // @ts-ignore
   headers: () => {
+    const token = getToken()
+
     return {
-      Authorization: `Bearer test`,
+      Authorization: token ? `Bearer ${token}` : null
     }
-  },
+  }
 })
 
 export default sseLink
