@@ -43,7 +43,7 @@ function Chat({ userId }: Props) {
     >
       <ChatHeader interlocutor={chat.interlocutor} />
       <ChatMessages messages={chat.messages.data} />
-      <ChatFooter />
+      <ChatFooter interlocutorId={chat.interlocutor.id} />
     </Box>
   )
 }

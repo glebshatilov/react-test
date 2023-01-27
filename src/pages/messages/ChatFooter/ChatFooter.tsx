@@ -1,9 +1,14 @@
 import { Box } from '@mui/material'
+import ChatFooterSender from '../ChatFooterSender/ChatFooterSender.js'
 
-function ChatFooter() {
+interface Props {
+  interlocutorId?: string
+}
+
+function ChatFooter({ interlocutorId }: Props) {
   return (
     <Box padding={2} borderTop="solid 1px #d4d4d4">
-      Chat Footer
+      <ChatFooterSender interlocutorId={interlocutorId} />
     </Box>
   )
 }

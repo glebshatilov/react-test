@@ -1,0 +1,8 @@
+mutation SendMessage($text: String!, $userId: ID) {
+  messages {
+    send(text: $text, userId: $userId) {
+      success
+      code
+    }
+  }
+}
