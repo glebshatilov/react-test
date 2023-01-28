@@ -6,6 +6,7 @@ import apolloClient from './services/apollo/config/client.js'
 import CssBaseline from '@mui/material/CssBaseline'
 import { AuthContextProvider } from '@/contexts/AuthContext.js'
 import ReduxProvider from '@/store/ReduxProvider.js'
+import { MessagesContextProvider } from '@/contexts/MessagesContext.js'
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <AuthContextProvider>
         <ApolloProvider client={apolloClient}>
           <CssBaseline />
-          <RouterProvider router={router} />
+          <MessagesContextProvider>
+            <RouterProvider router={router} />
+          </MessagesContextProvider>
         </ApolloProvider>
       </AuthContextProvider>
     </ReduxProvider>

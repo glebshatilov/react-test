@@ -2,25 +2,45 @@ import ChatMessages from '../ChatMessages/ChatMessages.js'
 import ChatHeader from '../ChatHeader/ChatHeader.js'
 import ChatFooter from '../ChatFooter/ChatFooter.js'
 import { Box } from '@mui/material'
-import { useQuery, useSubscription } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 // @ts-ignore
 import { DirectMessagesChat } from '@/services/apollo/queries/messages.graphql'
-// @ts-ignore
-import { TestSubscription } from '@/services/apollo/subscriptions/messages.graphql'
+import { useEffect } from 'react'
+import useMessages from '@/hooks/useMessages.js'
 
 interface Props {
   userId?: string
 }
 
 function Chat({ userId }: Props) {
-  const { data, loading } = useQuery(DirectMessagesChat, {
+  const { data, loading, updateQuery } = useQuery(DirectMessagesChat, {
     variables: { userId }
   })
 
-  const {data: data2, error } = useSubscription(TestSubscription)
+  const { newMessageInChat } = useMessages()
 
-  console.log('error', error)
-  console.log('data2', data2)
+  useEffect(() => {
+    if (!newMessageInChat) return // preventing initial call
+
+    updateQuery((prev) => {
+      if (newMessageInChat.id !== prev.messages.chat.id) return prev // if new message isn't from this chat
+
+      const newMessage = newMessageInChat.lastMessage
+
+      return Object.assign({}, prev, {
+        messages: {
+          ...prev.messages,
+          chat: {
+            ...prev.messages.chat,
+            messages: {
+              ...prev.messages.chat.messages,
+              data: [newMessage, ...prev.messages.chat.messages.data]
+            }
+          }
+        }
+      })
+    })
+  }, [newMessageInChat])
 
   if (loading) {
     return (

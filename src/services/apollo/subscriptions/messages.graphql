@@ -1,10 +1,13 @@
-subscription TestSubscription {
+subscription NewMessageInChatSubscription {
   newMessageInChat {
     id
     lastMessage {
       id
       text
       createdAt
+      author {
+        id
+      }
     }
     ... on DirectMessagesChat {
       interlocutor {
