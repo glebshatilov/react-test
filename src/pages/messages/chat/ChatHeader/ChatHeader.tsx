@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton'
 import { Link } from 'react-router-dom'
 import ArrowBack from '@mui/icons-material/ArrowBack'
 import { Menu } from '@mui/icons-material'
-import ChatHeaderUser from '@/pages/messages/ChatHeaderUser/ChatHeaderUser.js'
+import ChatHeaderUser from '../ChatHeaderUser/ChatHeaderUser.js'
 
 interface Props {
   interlocutor?: any

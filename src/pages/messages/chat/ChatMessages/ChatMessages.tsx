@@ -1,9 +1,9 @@
 import Stack from '@mui/material/Stack'
-import ChatMessagesItem from '@/pages/messages/ChatMessagesItem/ChatMessagesItem.js'
+import ChatMessagesItem from '../ChatMessagesItem/ChatMessagesItem.js'
+import ChatMessagesDate from '../ChatMessagesDate/ChatMessagesDate.js'
 import { MessageInterface } from '@/pages/messages/@types/index.js'
 import { checkTheSameDays } from '@/utils/date.js'
 import { Fragment } from 'react'
-import ChatMessagesDate from '@/pages/messages/ChatMessagesDate/ChatMessagesDate.js'
 
 interface Props {
   messages?: MessageInterface[],

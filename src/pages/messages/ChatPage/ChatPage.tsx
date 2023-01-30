@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container'
 import { useParams } from 'react-router-dom'
-import Chat from '@/pages/messages/Chat/Chat.js'
+import Chat from '../chat/Chat/Chat.js'
 
 function ChatPage() {
   const { userId } = useParams()

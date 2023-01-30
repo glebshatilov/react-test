@@ -4,7 +4,7 @@ import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'
 import { MessageInterface } from '@/pages/messages/@types/index.js'
 import { Box, Typography } from '@mui/material'
 import Paper from '@mui/material/Paper'
-import ChatMessagesItemTime from '@/pages/messages/ChatMessagesItemTime/ChatMessagesItemTime.js'
+import ChatMessagesItemTime from '../ChatMessagesItemTime/ChatMessagesItemTime.js'
 
 interface Props {
   data: MessageInterface
