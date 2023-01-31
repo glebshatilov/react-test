@@ -45,11 +45,10 @@ function Chat({ userId }: Props) {
   if (loading) {
     return (
       <Box
-        height="500px"
-        sx={{ background: '#f1f1f1' }}
         display="grid"
         gridTemplateRows="auto 1fr auto"
         borderRadius="8px"
+        height="100%"
       >
         <ChatHeader />
         <ChatMessages loading />

@@ -6,6 +6,7 @@ import IndexPage from '@/pages/index/IndexPage/IndexPage.js'
 import SignInPage from '@/pages/auth/SignInPage/SignInPage.js'
 import UsersPage from '@/pages/users/UsersPage/UsersPage.js'
 import DefaultLayout from '@/layouts/DefaultLayout/DefaultLayout.js'
+import EmptyChatPage from '@/pages/messages/EmptyChatPage/EmptyChatPage.js'
 
 export function getRoutes() {
   return [
@@ -29,11 +30,17 @@ export function getRoutes() {
           children: [
             {
               path: '/messages',
-              element: <MessagesPage />
-            },
-            {
-              path: '/messages/dm/:userId',
-              element: <ChatPage />
+              element: <MessagesPage />,
+              children: [
+                {
+                  index: true,
+                  element: <EmptyChatPage />
+                },
+                {
+                  path: '/messages/dm/:userId',
+                  element: <ChatPage />
+                }
+              ]
             },
             {
               path: '/profile',

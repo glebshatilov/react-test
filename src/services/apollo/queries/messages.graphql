@@ -1,25 +1,23 @@
+#import "../fragments/messages.graphql"
+
 query DirectMessagesChat($userId: ID!) {
   messages {
     chat(userId: $userId) {
-      id
-      participants {
-        id
-        email
+      ...ChatWithMessagesFields
+    }
+  }
+}
+
+query AllChats($pagination: PaginationInput) {
+  messages {
+    allChats (pagination: $pagination) {
+      pagination {
+        count
+        skip
+        limit
       }
-      messages {
-        data {
-          text
-          id
-          createdAt
-          author {
-            id
-          }
-        }
-      }
-      interlocutor {
-        email
-        name
-        id
+      data {
+        ...ChatFields
       }
     }
   }

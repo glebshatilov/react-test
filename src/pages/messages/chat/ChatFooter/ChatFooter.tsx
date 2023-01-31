@@ -7,7 +7,7 @@ interface Props {
 
 function ChatFooter({ interlocutorId }: Props) {
   return (
-    <Box padding={2} borderTop="solid 1px #d4d4d4">
+    <Box padding={1.5} borderTop="solid 1px #d4d4d4">
       <ChatFooterSender interlocutorId={interlocutorId} />
     </Box>
   )
