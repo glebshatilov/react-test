@@ -11,7 +11,7 @@ interface Props {
 function ChatListItemLastMessage({ data }: Props) {
   const { data: currentUserData } = useQuery(SignedInUserInfo)
 
-  const isCurrentUserMessage = currentUserData ? currentUserData.user.id === data.lastMessage.author?.id : false
+  const isCurrentUserMessage = currentUserData ? currentUserData.user.id === data.author?.id : false
 
   return (
     <Box gridArea="lastMessage" marginTop={0.5}>
@@ -22,7 +22,7 @@ function ChatListItemLastMessage({ data }: Props) {
         overflow="hidden"
         whiteSpace="nowrap"
       >
-        {isCurrentUserMessage && <span style={{ color: 'rgb(144 144 144)' }}>You: </span>}{data.lastMessage.text}
+        {isCurrentUserMessage && <span style={{ color: 'rgb(144 144 144)' }}>You: </span>}{data.text}
       </Typography>
     </Box>
   )

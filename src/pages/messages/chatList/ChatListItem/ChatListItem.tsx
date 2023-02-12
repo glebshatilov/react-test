@@ -21,6 +21,11 @@ function ChatListItem({ data }: Props) {
     }
   }
 
+  // don't show empty chats
+  if (!data.lastMessage) {
+    return null
+  }
+
   return (
     <Box
       display="grid"
@@ -40,7 +45,7 @@ function ChatListItem({ data }: Props) {
       <ChatListItemAvatar data={data} />
       <ChatListItemName data={data} />
       <ChatListItemDate lastMessageAt={data.lastMessageAt} />
-      <ChatListItemLastMessage data={data} />
+      <ChatListItemLastMessage data={data.lastMessage} />
     </Box>
   )
 }

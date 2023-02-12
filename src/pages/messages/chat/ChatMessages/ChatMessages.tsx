@@ -1,4 +1,5 @@
 import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
 import ChatMessagesItem from '../ChatMessagesItem/ChatMessagesItem.js'
 import ChatMessagesDate from '../ChatMessagesDate/ChatMessagesDate.js'
 import { MessageInterface } from '@/pages/messages/@types/index.js'
@@ -18,6 +19,12 @@ function ChatMessages({ messages = [], loading = false }: Props) {
   }
 
   let prevMessageDate: string
+
+  if (messages?.length === 0) {
+    return (
+      <Box>No messages in this chat</Box>
+    )
+  }
 
   return (
     <Stack
