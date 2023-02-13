@@ -1,20 +1,7 @@
+#import "../fragments/messages.graphql"
+
 subscription NewMessageInChatSubscription {
   newMessageInChat {
-    id
-    lastMessage {
-      id
-      text
-      createdAt
-      author {
-        id
-      }
-    }
-    ... on DirectMessagesChat {
-      interlocutor {
-        id
-        name
-        email
-      }
-    }
+    ...ChatFields
   }
 }

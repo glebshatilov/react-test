@@ -22,10 +22,15 @@ function ChatList() {
     )
   }
 
+  const sortedChats = chatsWithMessages.sort((a, b) => {
+    // @ts-ignore
+    return new Date(b.lastMessageAt) - new Date(a.lastMessageAt)
+  })
+
   return (
     <Stack overflow="auto" height="100%" borderRadius="12px 0 0 12px">
       {/* @ts-ignore */}
-      {chatsWithMessages.map(chat => <ChatListItem key={chat.id} data={chat} />)}
+      {sortedChats.map(chat => <ChatListItem key={chat.id} data={chat} />)}
     </Stack>
   )
 }
