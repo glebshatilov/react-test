@@ -14,7 +14,8 @@ interface Props {
 
 function Chat({ userId }: Props) {
   const { data, loading, updateQuery } = useQuery(DirectMessagesChat, {
-    variables: { userId }
+    variables: { userId },
+    fetchPolicy: 'network-only'
   })
 
   const { newMessageInChat } = useMessages()
