@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SignInForm from '@/components/SignInForm/SignInForm.js'
+import AuthForm from '@/components/authForm/AuthForm/AuthForm.js'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 
@@ -24,7 +24,7 @@ function HeaderSignInButton() {
     <>
       <Button onClick={() => handleClick()}>Sign in</Button>
       <Dialog open={isOpen} onClose={() => handleClose()}>
-        <SignInForm onSuccess={() => handleSuccessSignIn()} />
+        <AuthForm onSuccess={() => handleSuccessSignIn()} />
       </Dialog>
     </>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
+import Link from '@mui/material/Link'
 import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 // @ts-ignore
@@ -10,11 +11,12 @@ import AuthContext from '@/contexts/AuthContext.js'
 
 interface Props {
   onSuccess?: () => void
+  switchToSignUp?: () => void
 }
 
 interface State {
-  email: string,
-  password: string,
+  email: string
+  password: string
   error: {
     message: string
   } | null
@@ -106,6 +108,17 @@ class SignInForm extends React.Component<Props, State> {
               Sign in
             </Button>
           </Stack>
+          {
+            this.props.switchToSignUp &&
+              <Link
+                component="button"
+                underline="none"
+                sx={{ marginTop: 3 }}
+                onClick={() => { this.props.switchToSignUp?.() }}
+              >
+                Create account
+              </Link>
+          }
         </Paper>
       </div>
     )

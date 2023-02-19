@@ -1,4 +1,4 @@
-import SignInForm from '@/components/SignInForm/SignInForm.js'
+import AuthForm from '@/components/authForm/AuthForm/AuthForm.js'
 import Container from '@mui/material/Container'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ function SignInPage() {
     <div className="sign-in-page">
       <Container>
         <h1>Sign in</h1>
-        <SignInForm onSuccess={() => handleSuccessSignIn()} />
+        <AuthForm onSuccess={() => handleSuccessSignIn()} />
       </Container>
     </div>
   )

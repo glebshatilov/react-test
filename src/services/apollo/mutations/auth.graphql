@@ -3,17 +3,13 @@ mutation AuthSignUp($email: String!, $password: String!) {
     signUp(email: $email, password: $password) {
       code
       success
+      token
       user {
         id
         email
+        name
         createdAt
-        updatedAt
-        articles {
-          id
-          title
-        }
       }
-      token
     }
   }
 }
