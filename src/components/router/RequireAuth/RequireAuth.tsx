@@ -8,7 +8,7 @@ function RequireAuth() {
   return (
     isSignedIn
       ? <Outlet />
-      : <Navigate to="/signin" state={{ from: location }} replace />
+      : <Navigate to="/auth" state={{ from: location }} replace />
   )
 }
 

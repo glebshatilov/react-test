@@ -27,7 +27,7 @@ export function getRoutes() {
           element: <IndexPage />
         },
         {
-          path: '/signin',
+          path: '/auth',
           element: <AuthPage />
         },
         {
