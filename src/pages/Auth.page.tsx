@@ -2,7 +2,7 @@ import { AuthForm } from '@/features/auth'
 import Container from '@mui/material/Container'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-function SignInPage() {
+function AuthPage() {
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
@@ -23,4 +23,4 @@ function SignInPage() {
   )
 }
 
-export default SignInPage
+export default AuthPage

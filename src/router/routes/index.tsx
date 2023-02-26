@@ -1,12 +1,21 @@
-import RequireAuth from '@/components/router/RequireAuth/RequireAuth.js'
-import MessagesPage from '@/pages/messages/MessagesPage/MessagesPage.js'
-import ChatPage from '@/pages/messages/ChatPage/ChatPage.js'
-import ProfileMainPage from '@/pages/profile/ProfileMainPage/ProfileMainPage.js'
-import IndexPage from '@/pages/index/IndexPage/IndexPage.js'
-import SignInPage from '@/pages/auth/SignInPage/SignInPage.js'
-import UsersPage from '@/pages/users/UsersPage/UsersPage.js'
+// layouts
 import DefaultLayout from '@/layouts/DefaultLayout/DefaultLayout.js'
-import EmptyChatPage from '@/pages/messages/EmptyChatPage/EmptyChatPage.js'
+
+// profile pages
+import ProfileMainPage from '@/pages/profile/ProfileMain.page.js'
+
+// messages pages
+import MessagesPage from '@/pages/messages/Messages.page.js'
+import ChatPage from '@/pages/messages/Chat.page.js'
+import EmptyChatPage from '@/pages/messages/EmptyChat.page.js'
+
+// other pages
+import IndexPage from '@/pages/Index.page.js'
+import AuthPage from '@/pages/Auth.page.js'
+import UsersPage from '@/pages/Users.page.js'
+
+// other
+import RequireAuth from '@/components/router/RequireAuth/RequireAuth.js'
 
 export function getRoutes() {
   return [
@@ -19,7 +28,7 @@ export function getRoutes() {
         },
         {
           path: '/signin',
-          element: <SignInPage />
+          element: <AuthPage />
         },
         {
           path: '/users',
