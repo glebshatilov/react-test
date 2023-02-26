@@ -2,6 +2,7 @@ import authRoutes from './auth.routes.js'
 import userRoutes from './user.routes.js'
 import messagesRoutes from './messages.routes.js'
 import profileRoutes from './profile.routes.js'
+import editRoutes from './edit.routes.js'
 
 import DefaultLayout from '@/layouts/DefaultLayout/DefaultLayout.js'
 import RequireAuth from '@/components/router/RequireAuth/RequireAuth.js'
@@ -23,6 +24,7 @@ export function getRoutes() {
           element: <RequireAuth />,
           children: [
             ...messagesRoutes,
+            ...editRoutes,
             ...profileRoutes
           ]
         }
