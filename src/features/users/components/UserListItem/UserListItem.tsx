@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import UserListItemActions from '../UserListItemActions/UserListItemActions.js'
 import UserListItemData from '../UserListItemData/UserListItemData.js'
-import useAuth from '@/hooks/useAuth.js'
+import { useAuth } from '@/features/auth'
 
 interface Props {
   data: any

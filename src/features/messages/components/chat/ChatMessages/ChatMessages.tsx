@@ -2,7 +2,7 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import ChatMessagesItem from '../ChatMessagesItem/ChatMessagesItem.js'
 import ChatMessagesDate from '../ChatMessagesDate/ChatMessagesDate.js'
-import { MessageInterface } from '@/pages/messages/@types/index.js'
+import { MessageInterface } from '../../../@types/index.js'
 import { checkTheSameDays } from '@/utils/date.js'
 import { Fragment } from 'react'
 

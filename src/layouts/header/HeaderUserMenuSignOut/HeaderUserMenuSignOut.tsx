@@ -1,7 +1,7 @@
 import MenuItem from '@mui/material/MenuItem'
 import Logout from '@mui/icons-material/Logout'
 import ListItemIcon from '@mui/material/ListItemIcon'
-import useAuth from '@/hooks/useAuth.js'
+import { useAuth } from '@/features/auth'
 
 function HeaderUserMenuSignOut() {
   const { signOut } = useAuth()

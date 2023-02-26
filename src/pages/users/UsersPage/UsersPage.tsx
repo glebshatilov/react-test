@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container'
-import AllUsers from '../AllUsers/AllUsers.js'
+import { AllUsers } from '@/features/users'
 
 function UsersPage() {
   return (

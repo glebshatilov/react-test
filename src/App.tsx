@@ -4,9 +4,9 @@ import router from './router'
 import { ApolloProvider } from '@apollo/client'
 import apolloClient from './services/apollo/config/client.js'
 import CssBaseline from '@mui/material/CssBaseline'
-import { AuthContextProvider } from '@/contexts/AuthContext.js'
 import ReduxProvider from '@/store/ReduxProvider.js'
-import { MessagesContextProvider } from '@/contexts/MessagesContext.js'
+import { AuthContextProvider } from '@/features/auth'
+import { MessagesContextProvider } from '@/features/messages'
 
 function App() {
   return (

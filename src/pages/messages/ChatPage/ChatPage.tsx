@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import Chat from '../chat/Chat/Chat.js'
+import { Chat } from '@/features/messages'
 
 function ChatPage() {
   const { userId } = useParams()

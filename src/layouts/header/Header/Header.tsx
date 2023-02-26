@@ -5,7 +5,7 @@ import HeaderNav from '../HeaderNav/HeaderNav.js'
 import HeaderSignInButton from '../HeaderSignInButton/HeaderSignInButton.js'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
-import useAuth from '@/hooks/useAuth.js'
+import { useAuth } from '@/features/auth'
 
 function Header() {
   const { isSignedIn } = useAuth()

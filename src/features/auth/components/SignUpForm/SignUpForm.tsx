@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack'
 // @ts-ignore
 import { AuthSignUp } from '@/services/apollo/mutations/auth.graphql'
 import apolloClient from '@/services/apollo/config/client.js'
-import AuthContext from '@/contexts/AuthContext.js'
+import AuthContext from '../../contexts/AuthContext.js'
 
 interface Props {
   onSuccess?: () => void

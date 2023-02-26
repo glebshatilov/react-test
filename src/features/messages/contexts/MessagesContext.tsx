@@ -1,5 +1,5 @@
 import { createContext, ReactNode } from 'react'
-import useNewMessagesSubscription from '@/hooks/useNewMessagesSubscription.js'
+import useNewMessagesSubscription from '../hooks/useNewMessagesSubscription.js'
 
 interface Props {
   children: ReactNode

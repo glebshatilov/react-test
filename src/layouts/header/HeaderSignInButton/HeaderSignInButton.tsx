@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import AuthForm from '@/components/authForm/AuthForm/AuthForm.js'
+import { AuthForm } from '@/features/auth'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 

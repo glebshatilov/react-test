@@ -1,4 +1,4 @@
-import AuthForm from '@/components/authForm/AuthForm/AuthForm.js'
+import { AuthForm } from '@/features/auth'
 import Container from '@mui/material/Container'
 import { useLocation, useNavigate } from 'react-router-dom'
 

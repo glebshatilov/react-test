@@ -1,7 +1,7 @@
 import Stack from '@mui/material/Stack'
 import HeaderUserNav from '../HeaderUserNav/HeaderUserNav.js'
 import HeaderUserProfile from '../HeaderUserProfile/HeaderUserProfile.js'
-import useAuth from '@/hooks/useAuth.js'
+import { useAuth } from '@/features/auth'
 import { useQuery } from '@apollo/client'
 // @ts-ignore
 import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'

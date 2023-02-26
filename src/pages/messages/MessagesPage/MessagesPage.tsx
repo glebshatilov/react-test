@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container'
-import ChatList from '../chatList/ChatList/ChatList.js'
+import { ChatList } from '@/features/messages'
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 

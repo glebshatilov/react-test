@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useAuth from '@/hooks/useAuth.js'
+import { useAuth } from '@/features/auth'
 import apolloClient from '@/services/apollo/config/client.js'
 // @ts-ignore
 import { NewMessageInChatSubscription } from '@/services/apollo/subscriptions/messages.graphql'

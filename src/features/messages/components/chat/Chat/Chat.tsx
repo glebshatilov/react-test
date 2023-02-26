@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client'
 // @ts-ignore
 import { DirectMessagesChat } from '@/services/apollo/queries/messages.graphql'
 import { useEffect } from 'react'
-import useMessages from '@/hooks/useMessages.js'
+import useMessages from '../../../hooks/useMessages.js'
 
 interface Props {
   userId?: string

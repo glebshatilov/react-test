@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client'
 // @ts-ignore
 import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'
-import { MessageInterface } from '@/pages/messages/@types/index.js'
+import { MessageInterface } from '../../../@types/index.js'
 import { Box, Typography } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import ChatMessagesItemTime from '../ChatMessagesItemTime/ChatMessagesItemTime.js'
