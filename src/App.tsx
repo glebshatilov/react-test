@@ -7,19 +7,24 @@ import CssBaseline from '@mui/material/CssBaseline'
 import ReduxProvider from '@/store/ReduxProvider.js'
 import { AuthContextProvider } from '@/features/auth'
 import { MessagesContextProvider } from '@/features/messages'
+import { ThemeProvider } from '@primer/react'
+
+import './assets/global.scss'
 
 function App() {
   return (
-    <ReduxProvider>
-      <AuthContextProvider>
-        <ApolloProvider client={apolloClient}>
-          <CssBaseline />
-          <MessagesContextProvider>
-            <RouterProvider router={router} />
-          </MessagesContextProvider>
-        </ApolloProvider>
-      </AuthContextProvider>
-    </ReduxProvider>
+    <ThemeProvider>
+      <ReduxProvider>
+        <AuthContextProvider>
+          <ApolloProvider client={apolloClient}>
+            <CssBaseline />
+            <MessagesContextProvider>
+              <RouterProvider router={router} />
+            </MessagesContextProvider>
+          </ApolloProvider>
+        </AuthContextProvider>
+      </ReduxProvider>
+    </ThemeProvider>
   )
 }
 
