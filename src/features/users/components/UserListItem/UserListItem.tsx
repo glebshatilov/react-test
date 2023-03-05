@@ -10,11 +10,9 @@ interface Props {
 }
 
 function UserListItem({ data }: Props) {
-  const { isSignedIn, signedInUserId, signedInUser } = useAuth()
-
+  const { isSignedIn, signedInUserId } = useAuth()
   const isCurrentUserMessage = signedInUserId === data.id
 
-  console.log('isCurrentUserMessage', isCurrentUserMessage)
   return (
     <Paper sx={{ padding: 2 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
