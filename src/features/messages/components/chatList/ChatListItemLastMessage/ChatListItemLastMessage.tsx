@@ -1,17 +1,15 @@
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
-import { useQuery } from '@apollo/client'
-// @ts-ignore
-import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'
+import { useAuth } from '@/features/auth/index.js'
 
 interface Props {
   data: any
 }
 
 function ChatListItemLastMessage({ data }: Props) {
-  const { data: currentUserData } = useQuery(SignedInUserInfo)
+  const { signedInUserId } = useAuth()
 
-  const isCurrentUserMessage = currentUserData ? currentUserData.user.id === data.author?.id : false
+  const isCurrentUserMessage = signedInUserId === data.author?.id
 
   return (
     <Box gridArea="lastMessage" marginTop={0.5}>

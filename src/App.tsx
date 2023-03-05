@@ -15,14 +15,14 @@ function App() {
   return (
     <ThemeProvider>
       <ReduxProvider>
-        <AuthContextProvider>
-          <ApolloProvider client={apolloClient}>
+        <ApolloProvider client={apolloClient}>
+          <AuthContextProvider>
             <CssBaseline />
             <MessagesContextProvider>
               <RouterProvider router={router} />
             </MessagesContextProvider>
-          </ApolloProvider>
-        </AuthContextProvider>
+          </AuthContextProvider>
+        </ApolloProvider>
       </ReduxProvider>
     </ThemeProvider>
   )

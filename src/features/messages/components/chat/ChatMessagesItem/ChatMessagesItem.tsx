@@ -1,6 +1,4 @@
-import { useQuery } from '@apollo/client'
-// @ts-ignore
-import { SignedInUserInfo } from '@/services/apollo/queries/users.graphql'
+import { useAuth } from '@/features/auth/index.js'
 import { MessageInterface } from '../../../@types/index.js'
 import { Box, Typography } from '@mui/material'
 import Paper from '@mui/material/Paper'
@@ -11,10 +9,10 @@ interface Props {
 }
 
 function ChatMessagesItem({ data: message }: Props) {
-  const { data, loading } = useQuery(SignedInUserInfo)
+  const { loading, signedInUserId } = useAuth()
   if (loading) return null
 
-  const isCurrentUserMessage = data.user.id === message.author?.id
+  const isCurrentUserMessage = signedInUserId === message.author?.id
 
   return (
     <Box padding={1} display="flex" justifyContent={isCurrentUserMessage ? 'end' : 'start'}>

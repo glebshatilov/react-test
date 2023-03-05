@@ -9,8 +9,7 @@ interface Props {
 }
 
 function UserListItem({ data }: Props) {
-  const { isSignedIn } = useAuth()
-
+  const { isSignedIn, signedInUserId, signedInUser } = useAuth()
   return (
     <Paper sx={{ padding: 2 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
