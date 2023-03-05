@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack'
 import UserListItemActions from '../UserListItemActions/UserListItemActions.js'
 import UserListItemData from '../UserListItemData/UserListItemData.js'
 import { useAuth } from '@/features/auth'
+import Chip from '@mui/material/Chip'
 
 interface Props {
   data: any
@@ -10,11 +11,15 @@ interface Props {
 
 function UserListItem({ data }: Props) {
   const { isSignedIn, signedInUserId, signedInUser } = useAuth()
+
+  const isCurrentUserMessage = signedInUserId === data.id
+
+  console.log('isCurrentUserMessage', isCurrentUserMessage)
   return (
     <Paper sx={{ padding: 2 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <UserListItemData data={data} />
-        {isSignedIn && <UserListItemActions data={data} />}
+        {isSignedIn && isCurrentUserMessage ? <Chip label="It's you" size="small" /> : <UserListItemActions data={data} />}
       </Stack>
     </Paper>
   )
