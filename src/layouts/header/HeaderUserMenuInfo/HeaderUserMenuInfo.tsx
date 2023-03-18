@@ -18,8 +18,8 @@ function HeaderUserMenuInfo({ data }:Props) {
         flexDirection="column"
       >
         {data.name && <Typography fontSize={16} fontWeight={500}>{data.name}</Typography>}
-        {data.email && <Typography fontSize={14} fontWeight={400}>{data.email}</Typography>}
-        {data.username && <Typography fontSize={15} marginTop={1} color="black">{data.username}</Typography>}
+        {data.username && <Typography fontSize={14} marginTop={-0.5} color="gray">@{data.username}</Typography>}
+        {data.email && <Typography fontSize={14} marginTop={data.username ? 0.5 : 0} fontWeight={400}>{data.email}</Typography>}
       </Box>
 
     </div>
