@@ -1,10 +1,14 @@
 import IconButton from '@mui/material/IconButton'
 import Avatar from '@mui/material/Avatar'
 import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
 import HeaderUserMenuInfo from '../HeaderUserMenuInfo/HeaderUserMenuInfo.js'
 import HeaderUserMenuSignOut from '../HeaderUserMenuSignOut/HeaderUserMenuSignOut.js'
 import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import Edit from '@mui/icons-material/Edit.js'
+import ListItemIcon from '@mui/material/ListItemIcon'
 
 interface Props {
   data: {
@@ -68,6 +72,12 @@ function HeaderUserProfile({ data }: Props) {
       >
         <HeaderUserMenuInfo data={data} />
         <Divider sx={{ marginY: 1 }} />
+        <MenuItem component={Link} to="/edit">
+          <ListItemIcon>
+            <Edit />
+          </ListItemIcon>
+          Edit profile
+        </MenuItem>
         <HeaderUserMenuSignOut />
       </Menu>
     </div>
