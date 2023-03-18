@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material'
+import { MouseEvent } from 'react'
 
 interface Props {
   data: {
@@ -9,8 +10,12 @@ interface Props {
 }
 
 function HeaderUserMenuInfo({ data }:Props) {
+  const handleInfoClick = (event: MouseEvent) => {
+    event.stopPropagation()
+  }
+
   return (
-    <div className="header-user-menu-info">
+    <div className="header-user-menu-info" onClick={handleInfoClick}>
       <Box
         paddingX={2}
         justifyItems="center"
