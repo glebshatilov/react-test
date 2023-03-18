@@ -1,10 +1,9 @@
+#import "../fragments/users.graphql"
+
 query AllUsers {
   users {
-    id
-    email
-    name
-    username
-    createdAt
+    ...UserBaseFields
+
     followers {
       email
     }
@@ -25,9 +24,6 @@ query AllUsers {
 
 query SignedInUserInfo {
   user {
-    id
-    createdAt
-    email
-    name
+    ...UserBaseFields
   }
 }

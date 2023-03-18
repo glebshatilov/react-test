@@ -1,0 +1,13 @@
+#import "../fragments/users.graphql"
+
+mutation UserUpdateInfo($data: UserInfoDataInput!) {
+  user {
+    updateInfo(data: $data) {
+      code
+      success
+      user {
+        ...UserBaseFields
+      }
+    }
+  }
+}

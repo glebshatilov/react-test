@@ -1,0 +1,7 @@
+fragment UserBaseFields on User {
+  id
+  email
+  name
+  username
+  createdAt
+}
