@@ -3,9 +3,9 @@ import { useMutation } from '@apollo/client'
 import { UserUpdateInfo } from '@/services/apollo/mutations/users.graphql'
 
 interface UpdateUserVariables {
-  name: string
-  username: string
-  email: string
+  name?: string
+  username?: string
+  email?: string
 }
 
 function useApiUpdateUser() {

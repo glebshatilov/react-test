@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/client'
 import apolloClient from './services/apollo/config/client.js'
 import CssBaseline from '@mui/material/CssBaseline'
 import ReduxProvider from '@/store/ReduxProvider.js'
-import { AuthContextProvider } from '@/features/auth'
+import { AuthContextProvider, RequireNameProvider } from '@/features/auth'
 import { MessagesContextProvider } from '@/features/messages'
 import { ThemeProvider } from '@primer/react'
 
@@ -19,7 +19,9 @@ function App() {
           <AuthContextProvider>
             <CssBaseline />
             <MessagesContextProvider>
-              <RouterProvider router={router} />
+              <RequireNameProvider>
+                <RouterProvider router={router} />
+              </RequireNameProvider>
             </MessagesContextProvider>
           </AuthContextProvider>
         </ApolloProvider>

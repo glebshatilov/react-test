@@ -21,7 +21,7 @@ interface SnackbarState {
   severity: 'success' | 'error'
 }
 
-const EditProfile: React.FC = () => {
+function EditProfile() {
   const { signedInUser, loading } = useAuth()
 
   const [name, setName] = useState<string>('')
