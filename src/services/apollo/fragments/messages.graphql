@@ -1,3 +1,5 @@
+#import "../fragments/users.graphql"
+
 fragment MessageFields on Message {
   id
   text
@@ -19,9 +21,7 @@ fragment ChatFields on DirectMessagesChat {
   lastMessageAt
   ... on DirectMessagesChat {
     interlocutor {
-      email
-      name
-      id
+      ...UserBaseFields
     }
   }
 }

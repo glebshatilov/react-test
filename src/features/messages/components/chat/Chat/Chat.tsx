@@ -43,7 +43,9 @@ function Chat({ userId }: Props) {
     })
   }, [newMessageInChat])
 
-  if (loading) {
+  // TODO: Add error handler
+
+  if (loading || !data) {
     return (
       <Box
         display="grid"
