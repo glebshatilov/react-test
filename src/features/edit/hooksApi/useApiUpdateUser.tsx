@@ -6,6 +6,7 @@ interface UpdateUserVariables {
   name?: string
   username?: string
   email?: string
+  avatar?: string
 }
 
 function useApiUpdateUser() {

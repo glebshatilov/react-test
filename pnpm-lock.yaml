@@ -27,6 +27,8 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   graphql: ^16.6.0
   graphql-sse: ^2.0.0
+  imagekit-javascript: ^1.5.5
+  imagekitio-react: ^2.0.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-redux: ^8.0.5
@@ -46,6 +48,8 @@ dependencies:
   '@reduxjs/toolkit': 1.9.1_k4ae6lp43ej6mezo3ztvx6pykq
   graphql: 16.6.0
   graphql-sse: 2.0.0_graphql@16.6.0
+  imagekit-javascript: 1.5.5
+  imagekitio-react: 2.0.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.5_ie75ejlwqy5zh3tldgt7pftwcu
@@ -2539,6 +2543,22 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
     dev: true
+
+  /imagekit-javascript/1.5.5:
+    resolution: {integrity: sha512-WnEq7zIiYx+bN1fUzLEqSD33xOCEhHpDmlo3SxQkXPiLBnnnLGhBZi583wNhBXP3RB/yQQEKOBeOelnZ7WVgPA==}
+    dev: false
+
+  /imagekitio-react/2.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-CBZ8Y43RgzHenqRj3nRA9MZVQbmUATxwFoyfrDXNRomT9i6EabG0582e7zl/cmODAfcSfW0dA8Oyz19HyfP+EA==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      imagekit-javascript: 1.5.5
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /immer/9.0.18:
     resolution: {integrity: sha512-eAPNpsj7Ax1q6Y/3lm2PmlwRcFzpON7HSNQ3ru5WQH1/PSpnyed/HpNOELl2CxLKoj4r+bAHgdyKqW5gc2Se1A==}

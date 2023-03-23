@@ -9,6 +9,9 @@ function EditNav() {
         <NavListItem to="/edit">
           Profile
         </NavListItem>
+        <NavListItem to="/edit/avatar">
+          Avatar
+        </NavListItem>
         <NavListItem to="/edit/contacts">
           Contacts
         </NavListItem>
