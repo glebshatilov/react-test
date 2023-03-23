@@ -1,5 +1,4 @@
 import IconButton from '@mui/material/IconButton'
-import Avatar from '@mui/material/Avatar'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Divider from '@mui/material/Divider'
@@ -9,17 +8,9 @@ import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Edit from '@mui/icons-material/Edit.js'
 import ListItemIcon from '@mui/material/ListItemIcon'
+import { UserAvatar } from '@/features/users/index.js'
 
-interface Props {
-  data: {
-    name: string,
-    email: string,
-    username: string
-  }
-}
-
-function HeaderUserProfile({ data }: Props) {
-  const avatarLetter = (data.name || data.email)[0].toUpperCase()
+function HeaderUserProfile() {
   const [isOpenMenu, setOpenMenu] = useState(false)
   const anchorEl = useRef(null)
 
@@ -34,7 +25,7 @@ function HeaderUserProfile({ data }: Props) {
   return (
     <div className="header-user-profile">
       <IconButton ref={anchorEl} size="small" onClick={handleClick}>
-        <Avatar sx={{ width: 30, height: 30 }}>{avatarLetter}</Avatar>
+        <UserAvatar size={{ width: 30, height: 30 }} />
       </IconButton>
       <Menu
         anchorEl={anchorEl.current}
@@ -70,7 +61,7 @@ function HeaderUserProfile({ data }: Props) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       >
-        <HeaderUserMenuInfo data={data} />
+        <HeaderUserMenuInfo />
         <Divider sx={{ marginY: 1 }} />
         <MenuItem component={Link} to="/edit">
           <ListItemIcon>

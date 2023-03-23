@@ -1,18 +1,16 @@
-import Avatar from '@mui/material/Avatar'
 import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
+import { UserAvatar } from '@/features/users/index.js'
 
 interface Props {
   data: any
 }
 
 function UserListItemData({ data }: Props) {
-  const avatarLetter = (data.name || data.email)[0].toUpperCase() // ToDo: need to move to separate component
-
   return (
     <Stack direction="row" spacing={2}>
-      <Avatar sx={{ width: 45, height: 45 }}>{avatarLetter}</Avatar>
+      <UserAvatar user={data} size={{ width: 45, height: 45 }} />
       <Box
         justifyItems="center"
         display="flex"

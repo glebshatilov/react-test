@@ -1,15 +1,10 @@
 import { Box, Typography } from '@mui/material'
 import { MouseEvent } from 'react'
+import { useAuth } from '@/features/auth/index.js'
 
-interface Props {
-  data: {
-    name: string,
-    email: string,
-    username: string
-  }
-}
+function HeaderUserMenuInfo() {
+  const { signedInUser } = useAuth()
 
-function HeaderUserMenuInfo({ data }:Props) {
   const handleInfoClick = (event: MouseEvent) => {
     event.stopPropagation()
   }
@@ -22,9 +17,9 @@ function HeaderUserMenuInfo({ data }:Props) {
         display="flex"
         flexDirection="column"
       >
-        {data.name && <Typography fontSize={16} fontWeight={500}>{data.name}</Typography>}
-        {data.username && <Typography fontSize={14} marginTop={-0.5} color="gray">@{data.username}</Typography>}
-        {data.email && <Typography fontSize={14} marginTop={data.username ? 0.5 : 0} fontWeight={400}>{data.email}</Typography>}
+        {signedInUser.name && <Typography fontSize={16} fontWeight={500}>{signedInUser.name}</Typography>}
+        {signedInUser.username && <Typography fontSize={14} marginTop={-0.5} color="gray">@{signedInUser.username}</Typography>}
+        {signedInUser.email && <Typography fontSize={14} marginTop={signedInUser.username ? 0.5 : 0} fontWeight={400}>{signedInUser.email}</Typography>}
       </Box>
 
     </div>

@@ -15,7 +15,7 @@ function HeaderUser() {
     <div className="header-user">
       <Stack direction="row" spacing={3} alignItems="center">
         <HeaderUserNav />
-        <HeaderUserProfile data={signedInUser} />
+        <HeaderUserProfile />
       </Stack>
     </div>
   )
