@@ -4,21 +4,14 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Snackbar from '@mui/material/Snackbar'
-import Alert from '@mui/material/Alert'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useAuth } from '@/features/auth/index.js'
 import { useApiUpdateUser } from '@/features/edit/index.js'
+import { useNotification } from '@/features/notifications/index.js'
 
 interface ErrorState {
   field: string
   message: string
-}
-
-interface SnackbarState {
-  open: boolean
-  message: string
-  severity: 'success' | 'error'
 }
 
 function EditProfile() {
@@ -28,11 +21,7 @@ function EditProfile() {
   const [username, setUsername] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [error, setError] = useState<ErrorState | null>(null)
-  const [snackbar, setSnackbar] = useState<SnackbarState>({
-    open: false,
-    message: '',
-    severity: 'success'
-  })
+  const { showNotification } = useNotification()
 
   useEffect(() => {
     if (signedInUser) {
@@ -57,7 +46,7 @@ function EditProfile() {
       })
 
       if (updatedUserData?.user?.updateInfo?.success) {
-        setSnackbar({ open: true, message: 'Profile updated successfully.', severity: 'success' })
+        showNotification('Profile updated successfully.', 'success')
       }
     } catch (err) {
       if (
@@ -78,7 +67,7 @@ function EditProfile() {
         }
 
         if (!handled) {
-          setSnackbar({ open: true, message: 'An unexpected error occurred. Please try again later.', severity: 'error' })
+          showNotification('An unexpected error occurred. Please try again later.', 'error')
         }
       }
     }
@@ -156,20 +145,6 @@ function EditProfile() {
           </Grid>
         </Grid>
       </form>
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <Alert
-          onClose={() => setSnackbar({ ...snackbar, open: false })}
-          severity={snackbar.severity}
-          variant="filled"
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
     </Paper>
   )
 }

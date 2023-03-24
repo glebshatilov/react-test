@@ -3,12 +3,11 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
 import Grid from '@mui/material/Grid'
-import Snackbar from '@mui/material/Snackbar'
-import Alert from '@mui/material/Alert'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useAuth } from '@/features/auth'
 import { useApiUpdateUser } from '@/features/edit/index.js'
 import { useFileLoader } from '@/features/fileLoader/index.js'
+import { useNotification } from '@/features/notifications/index.js'
 
 function EditAvatarForm() {
   const { signedInUser } = useAuth()
@@ -16,16 +15,7 @@ function EditAvatarForm() {
   const [previewSrc, setPreviewSrc] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
   const { uploadFile } = useFileLoader()
-  const [snackbar, setSnackbar] = useState<{
-    open: boolean
-    message: string
-    severity: 'success' | 'error'
-  }>({
-    open: false,
-    message: '',
-    severity: 'success'
-  })
-
+  const { showNotification } = useNotification()
   const { updateUserHandler } = useApiUpdateUser()
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,18 +44,10 @@ function EditAvatarForm() {
         setLoading(false)
         setAvatarFile(null)
         setPreviewSrc(null)
-        setSnackbar({
-          open: true,
-          message: 'Avatar updated successfully.',
-          severity: 'success'
-        })
+        showNotification('Avatar updated successfully.', 'success')
       } catch (error) {
         setLoading(false)
-        setSnackbar({
-          open: true,
-          message: 'Failed to upload image to ImageKit.',
-          severity: 'error'
-        })
+        showNotification('Failed to upload image to ImageKit.', 'error')
       }
     }
   }
@@ -113,20 +95,6 @@ function EditAvatarForm() {
           </Box>
         </Grid>
       </Grid>
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <Alert
-          onClose={() => setSnackbar({ ...snackbar, open: false })}
-          severity={snackbar.severity}
-          variant="filled"
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
     </Box>
   )
 }

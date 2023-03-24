@@ -6,20 +6,13 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import Link from '@mui/material/Link'
-import Snackbar from '@mui/material/Snackbar'
-import Alert from '@mui/material/Alert'
 import { useApiUpdateUser } from '@/features/edit'
 import { useAuth } from '@/features/auth'
+import { useNotification } from '@/features/notifications/index.js'
 
 interface ErrorState {
   field: string
   message: string
-}
-
-interface SnackbarState {
-  open: boolean
-  message: string
-  severity: 'success' | 'error'
 }
 
 function RequireNameForm() {
@@ -27,12 +20,7 @@ function RequireNameForm() {
   const [name, setName] = useState<string>(signedInUser?.name || '')
   const [username, setUsername] = useState<string>(signedInUser?.username || '')
   const [error, setError] = useState<ErrorState | null>(null)
-  const [snackbar, setSnackbar] = useState<SnackbarState>({
-    open: false,
-    message: '',
-    severity: 'success'
-  })
-
+  const { showNotification } = useNotification()
   const { updateUserHandler } = useApiUpdateUser()
 
   const handleSubmit = async(event: FormEvent) => {
@@ -63,11 +51,7 @@ function RequireNameForm() {
         }
 
         if (!handled) {
-          setSnackbar({
-            open: true,
-            message: 'An unexpected error occurred. Please try again later.',
-            severity: 'error'
-          })
+          showNotification('An unexpected error occurred. Please try again later.', 'error')
         }
       }
     }
@@ -87,7 +71,7 @@ function RequireNameForm() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '100vh',
+          minHeight: '100vh'
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
@@ -137,20 +121,6 @@ function RequireNameForm() {
             </Grid>
           </Grid>
         </form>
-        <Snackbar
-          open={snackbar.open}
-          autoHideDuration={6000}
-          onClose={() => setSnackbar({ ...snackbar, open: false })}
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        >
-          <Alert
-            onClose={() => setSnackbar({ ...snackbar, open: false })}
-            severity={snackbar.severity}
-            variant="filled"
-          >
-            {snackbar.message}
-          </Alert>
-        </Snackbar>
       </Box>
     </Container>
   )
