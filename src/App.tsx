@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import ReduxProvider from '@/store/ReduxProvider.js'
 import { AuthContextProvider, RequireNameProvider } from '@/features/auth'
 import { MessagesContextProvider } from '@/features/messages'
+import { NotificationContextProvider } from '@/features/notifications/index.js'
 import { ThemeProvider } from '@primer/react'
 
 import './assets/global.scss'
@@ -19,9 +20,11 @@ function App() {
           <AuthContextProvider>
             <CssBaseline />
             <MessagesContextProvider>
-              <RequireNameProvider>
-                <RouterProvider router={router} />
-              </RequireNameProvider>
+              <NotificationContextProvider>
+                <RequireNameProvider>
+                  <RouterProvider router={router} />
+                </RequireNameProvider>
+              </NotificationContextProvider>
             </MessagesContextProvider>
           </AuthContextProvider>
         </ApolloProvider>
