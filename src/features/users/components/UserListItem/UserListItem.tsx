@@ -17,7 +17,7 @@ function UserListItem({ data }: Props) {
     <Paper sx={{ padding: 2 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <UserListItemData data={data} />
-        {isSignedIn && isCurrentUserMessage ? <Chip label="It's you" size="small" /> : <UserListItemActions data={data} />}
+        {isSignedIn && (isCurrentUserMessage ? <Chip label="It's you" size="small" /> : <UserListItemActions data={data} />)}
       </Stack>
     </Paper>
   )
