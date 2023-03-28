@@ -2,28 +2,18 @@
 
 query AllUsers {
   users {
-    ...UserBaseFields
-
-    followers {
-      email
-    }
-    following {
-      email
-    }
-    articles {
-      id
-      title
-      createdAt
-      updatedAt
-      author {
-        id
-      }
-    }
+    ...UserExtendedFields
   }
 }
 
 query SignedInUserInfo {
   user {
     ...UserBaseFields
+  }
+}
+
+query UserBySlug($userSlug: ID) {
+  user(id: $userSlug) {
+    ...UserExtendedFields
   }
 }

@@ -1,3 +1,5 @@
+#import "./articles.graphql"
+
 fragment UserBaseFields on User {
   id
   email
@@ -7,4 +9,18 @@ fragment UserBaseFields on User {
   }
   username
   createdAt
+}
+
+fragment UserExtendedFields on User {
+  ...UserBaseFields
+
+  followers {
+    ...UserBaseFields
+  }
+  following {
+    ...UserBaseFields
+  }
+  articles {
+    ...ArticleBaseFields
+  }
 }
