@@ -1,13 +1,16 @@
 import { useParams } from 'react-router-dom'
 import { useApiGetUserBySlug } from '@/features/users/index.js'
 import UserAvatar from '../UserAvatar/UserAvatar.js'
-import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
+import UserProfileActions from '../UserProfileActions/UserProfileActions.js'
+import { useAuth } from '@/features/auth/index.js'
+import Chip from '@mui/material/Chip'
 
 function UserProfile() {
+  const { isSignedIn, signedInUserId } = useAuth()
   const { userSlug } = useParams()
   const { data, loading, error } = useApiGetUserBySlug({ userSlug })
 
@@ -15,6 +18,7 @@ function UserProfile() {
   if (error) return <p>Error: {error.message}</p>
 
   const user = data.user
+  const isCurrentUserProfile = signedInUserId === user.id
 
   return (
     <Grid container alignItems="center" spacing={2}>
@@ -31,14 +35,7 @@ function UserProfile() {
         </Box>
       </Grid>
       <Grid item>
-        <Box display="flex" flexDirection="column" gap={1}>
-          <Button variant="contained" color="primary">
-            Follow
-          </Button>
-          <Button variant="contained" color="secondary">
-            Message
-          </Button>
-        </Box>
+        {isSignedIn && (isCurrentUserProfile ? <Chip label="It's you" size="small" /> : <UserProfileActions />)}
       </Grid>
     </Grid>
   )
