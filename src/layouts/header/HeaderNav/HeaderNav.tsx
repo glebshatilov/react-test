@@ -15,7 +15,7 @@ function HeaderNav() {
       </Link>
       <Link
         component={RouterLink}
-        to="/"
+        to="/articles"
         underline="none"
         color="gray"
       >
