@@ -14,7 +14,7 @@ function AuthPage() {
   }
 
   return (
-    <div className="sign-in-page">
+    <div className="auth-page">
       <Container>
         <h1>Sign in</h1>
         <AuthForm onSuccess={() => handleSuccessSignIn()} />
