@@ -2,9 +2,7 @@ name: React CI/CD
 
 on:
   push:
-    branches: [ master-ci ]
-  pull_request:
-    branches: [ master-ci ]
+    branches: [ master ]
 
 jobs:
   build:
