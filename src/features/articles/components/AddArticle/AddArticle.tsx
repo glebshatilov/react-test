@@ -1,59 +1,25 @@
 import { useState } from 'react'
-import Quill from 'quill'
-import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css' // Import the styles
+import { TElement } from '@udecode/plate'
 import Button from '@mui/material/Button'
-import ImageResize from 'quill-image-resize'
-
-Quill.register('modules/imageResize', ImageResize)
-
-const toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-  ['blockquote', 'code-block'],
-
-  [{ header: 1 }, { header: 2 }], // custom button values
-  [{ list: 'ordered' }, { list: 'bullet' }],
-  [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
-  [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
-  [{ direction: 'rtl' }], // text direction
-
-  [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
-  [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-  [{ font: [] }],
-  [{ align: [] }],
-
-  ['clean'], // remove formatting button
-
-  ['image'] // Add the image button
-]
+import Editor from '@/components/common/Editor/Editor'
 
 function AddArticle() {
-  const [content, setContent] = useState('')
-
-  const handleChange = (value: string) => {
-    setContent(value)
-  }
+  const [value, setValue] = useState<TElement[]>([
+    {
+      type: 'paragraph',
+      children: [{ text: '' }]
+    }
+  ])
 
   return (
     <div>
-      <ReactQuill
-        value={content}
-        onChange={handleChange}
-        modules={{
-          toolbar: toolbarOptions,
-          imageResize: {
-            // You can customize the ImageResize options here
-          }
-        }}
-      />
+      <Editor value={value} setValue={setValue} />
       <Button
         variant="contained"
         color="primary"
         onClick={() => {
           // Handle the submission of the article here
-          console.log('Article content:', content)
+          console.log('Article content:', value)
         }}
       >
         Submit
