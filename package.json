@@ -17,6 +17,9 @@
     "@mui/material": "^5.11.3",
     "@primer/react": "^35.20.0",
     "@reduxjs/toolkit": "^1.9.1",
+    "@udecode/plate": "^21.2.0",
+    "@udecode/plate-toolbar": "^8.3.0",
+    "@udecode/plate-ui-toolbar": "^21.1.5",
     "graphql": "^16.6.0",
     "graphql-sse": "^2.0.0",
     "imagekit-javascript": "^1.5.5",
@@ -28,6 +31,10 @@
     "react-quill": "^2.0.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
+    "slate": "^0.94.1",
+    "slate-history": "^0.93.0",
+    "slate-hyperscript": "^0.77.0",
+    "slate-react": "^0.94.2",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -38,6 +45,7 @@
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "@udecode/plate-test-utils": "^13.4.0",
     "@vitejs/plugin-react": "^3.0.0",
     "eslint": "^8.31.0",
     "eslint-config-standard": "^17.0.0",
