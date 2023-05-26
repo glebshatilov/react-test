@@ -1,4 +1,5 @@
 import {
+  createBasicElementsPlugin,
   createBlockquotePlugin,
   createHeadingPlugin,
   createParagraphPlugin,
@@ -10,6 +11,7 @@ import {
 } from '@udecode/plate'
 
 const pluginList = [
+  createBasicElementsPlugin(),
   createParagraphPlugin(),
   createBlockquotePlugin(),
   createHeadingPlugin(),

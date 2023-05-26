@@ -1,31 +1,25 @@
-import { useState, Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import { Plate, TElement, TEditableProps } from '@udecode/plate'
 import { basicElementsValue, basicMarksValue } from './testData'
 import plugins from './plugins'
 import Toolbar from './components/Toolbar/Toolbar'
-import TestToolbarButtons from './components/Toolbar/TestToolbarButtons'
-import BasicMarkToolbarButtons from './components/Toolbar/BasicMarkToolbarButtons'
 
 interface Props {
   value: TElement[]
   setValue: Dispatch<SetStateAction<TElement[]>>
+  disabled?: boolean
 }
 
-const editableProps: TEditableProps = {
-  placeholder: 'Haha...'
-}
-
-function Editor({ value, setValue }: Props) {
-  const ToolbarElement = (
-    <Toolbar>
-      <BasicMarkToolbarButtons />
-    </Toolbar>
-  )
+function Editor({ value, setValue, disabled }: Props) {
+  const editableProps: TEditableProps = {
+    placeholder: 'Content...',
+    readOnly: disabled
+  }
 
   return (
     <div>
       <Plate
-        firstChildren={ToolbarElement}
+        firstChildren={<Toolbar />}
         initialValue={[...basicElementsValue, ...basicMarksValue]}
         plugins={plugins}
         value={value}
