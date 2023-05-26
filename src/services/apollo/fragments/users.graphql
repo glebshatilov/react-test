@@ -1,15 +1,4 @@
-#import "./articles.graphql"
-
-fragment UserBaseFields on User {
-  id
-  email
-  name
-  avatar {
-    src
-  }
-  username
-  createdAt
-}
+#import "./common.graphql"
 
 fragment UserExtendedFields on User {
   ...UserBaseFields

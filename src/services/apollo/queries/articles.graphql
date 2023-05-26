@@ -1,0 +1,9 @@
+#import "../fragments/articles.graphql"
+
+query AllArticles {
+  articles {
+    data {
+      ...ArticleBaseFields
+    }
+  }
+}
