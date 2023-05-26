@@ -1,0 +1,13 @@
+#import "../fragments/articles.graphql"
+
+mutation CreateArticle($title: String!, $content: String!) {
+  article {
+    create(title: $title, content: $content) {
+      code
+      success
+      article {
+        ...ArticleFullFields
+      }
+    }
+  }
+}
