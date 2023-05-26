@@ -1,14 +1,6 @@
+#import "./common.graphql"
+
 fragment ArticleFullFields on Article {
   content
   ...ArticleBaseFields
-}
-
-fragment ArticleBaseFields on Article {
-  id
-  title
-  createdAt
-  updatedAt
-  author {
-    id
-  }
 }

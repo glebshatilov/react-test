@@ -1,0 +1,20 @@
+fragment UserBaseFields on User {
+  id
+  email
+  name
+  avatar {
+    src
+  }
+  username
+  createdAt
+}
+
+fragment ArticleBaseFields on Article {
+  id
+  title
+  createdAt
+  updatedAt
+  author {
+    ...UserBaseFields
+  }
+}
