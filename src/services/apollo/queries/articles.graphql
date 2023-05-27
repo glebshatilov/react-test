@@ -7,3 +7,9 @@ query AllArticles {
     }
   }
 }
+
+query ArticleById($articleId: ID!) {
+  article(id: $articleId) {
+    ...ArticleExtendedFields
+  }
+}

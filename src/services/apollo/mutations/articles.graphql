@@ -6,7 +6,7 @@ mutation CreateArticle($title: String!, $content: String!) {
       code
       success
       article {
-        ...ArticleFullFields
+        ...ArticleExtendedFields
       }
     }
   }

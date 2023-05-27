@@ -18,7 +18,7 @@ export default [
     ]
   },
   {
-    path: '/a/:articleSlug',
+    path: '/a/:articleId',
     element: <ArticlePage />
   }
 ]
