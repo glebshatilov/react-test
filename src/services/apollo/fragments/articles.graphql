@@ -1,6 +1,6 @@
 #import "./common.graphql"
 
-fragment ArticleFullFields on Article {
+fragment ArticleExtendedFields on Article {
   content
   ...ArticleBaseFields
 }
