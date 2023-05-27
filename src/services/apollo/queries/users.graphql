@@ -12,8 +12,8 @@ query SignedInUserInfo {
   }
 }
 
-query UserBySlug($userSlug: ID) {
-  user(id: $userSlug) {
+query UserById($userId: ID) {
+  user(id: $userId) {
     ...UserExtendedFields
   }
 }

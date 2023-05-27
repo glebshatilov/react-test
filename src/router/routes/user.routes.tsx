@@ -7,7 +7,7 @@ export default [
     element: <UsersPage />
   },
   {
-    path: '/u/:userSlug',
+    path: '/u/:userId',
     element: <UserPage />
   }
 ]
