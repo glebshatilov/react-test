@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { useApiGetUserBySlug } from '@/features/users/index.js'
+import { useApiGetUserById } from '@/features/users/index.js'
 import UserAvatar from '../UserAvatar/UserAvatar.js'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -11,8 +11,8 @@ import Chip from '@mui/material/Chip'
 
 function UserProfile() {
   const { isSignedIn, signedInUserId } = useAuth()
-  const { userSlug } = useParams()
-  const { data, loading, error } = useApiGetUserBySlug({ userSlug })
+  const { userId } = useParams()
+  const { data, loading, error } = useApiGetUserById({ userId })
 
   if (loading) return <CircularProgress />
   if (error) return <p>Error: {error.message}</p>

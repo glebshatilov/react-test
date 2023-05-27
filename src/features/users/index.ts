@@ -5,4 +5,4 @@ export { default as UserLink } from './components/UserLink/UserLink.js'
 export { default as UserProfile } from './components/UserProfile/UserProfile.js'
 
 // hooks
-export { default as useApiGetUserBySlug } from './hooksApi/useApiGetUserBySlug.js'
+export { default as useApiGetUserById } from './hooksApi/useApiGetUserById.js'
