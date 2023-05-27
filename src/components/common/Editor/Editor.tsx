@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
 import { Plate, TElement, TEditableProps } from '@udecode/plate'
-import { basicElementsValue, basicMarksValue } from './testData'
 import plugins from './plugins'
 import Toolbar from './components/Toolbar/Toolbar'
 
@@ -13,7 +12,9 @@ interface Props {
 
 function Editor({ value, setValue, disabled, readOnly }: Props) {
   const editableProps: TEditableProps = {
-    placeholder: 'Content...',
+    ...(!readOnly && {
+      placeholder: 'Content...'
+    }),
     readOnly: disabled || readOnly
   }
 
@@ -21,7 +22,6 @@ function Editor({ value, setValue, disabled, readOnly }: Props) {
     <div>
       <Plate
         firstChildren={readOnly ? null : <Toolbar />}
-        initialValue={[...basicElementsValue, ...basicMarksValue]}
         plugins={plugins}
         value={value}
         onChange={setValue}

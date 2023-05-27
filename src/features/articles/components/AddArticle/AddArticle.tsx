@@ -7,6 +7,7 @@ import Editor from '@/components/common/Editor/Editor'
 import useApiCreateArticle from '../../hooksApi/useApiCreateArticle'
 import { useNotification } from '@/features/notifications/index.js'
 import { useNavigate } from 'react-router-dom'
+import { basicElementsValue, basicMarksValue } from '@/components/common/Editor/testData'
 
 interface ErrorState {
   field: string
@@ -15,12 +16,7 @@ interface ErrorState {
 
 function AddArticle() {
   const [title, setTitle] = useState<string>('')
-  const [value, setValue] = useState<TElement[]>([
-    {
-      type: 'paragraph',
-      children: [{ text: '' }]
-    }
-  ])
+  const [value, setValue] = useState<TElement[]>([...basicElementsValue, ...basicMarksValue])
 
   const [error, setError] = useState<ErrorState | null>(null)
 
